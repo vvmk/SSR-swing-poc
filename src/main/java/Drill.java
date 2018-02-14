@@ -15,9 +15,13 @@ public class Drill implements Runnable {
         this.time = time;
     }
 
+    private void doTick(int timeLeft) {
+        System.out.println(timeLeft);
+    }
+
     @Override
     public void run() {
-
+        System.out.println(title + " ticking...");
     }
 
     public int getTime() {
