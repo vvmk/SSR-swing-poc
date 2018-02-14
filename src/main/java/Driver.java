@@ -9,11 +9,11 @@ import java.util.Scanner;
 
 public class Driver {
     public static void main(String[] args) {
-        DrillQueue timers = new DrillQueue();
+        DrillInstructor drillQueue = new DrillInstructor();
 
         Scanner in = new Scanner(System.in);
 
-        System.out.println("How many timers?");
+        System.out.println("How many drills?");
         Integer numberOfTimers = Integer.parseInt(in.nextLine());
 
         System.out.println("How much time before each drill (in seconds)?");
@@ -21,17 +21,17 @@ public class Driver {
 
         // build the queue
         for (int i=0;i<numberOfTimers;i++) {
-            System.out.println("~~~ Drill #" + i + " ~~~");
+            System.out.println("Drill #" + (i+1));
 
-            System.out.print("  Title: ");
+            System.out.print("Title: ");
             String title = in.nextLine();
 
-            System.out.println("  Time (in seconds): ");
-            Integer timeMilis = Integer.parseInt(in.nextLine()) * 1000; //TODO: enforce a limit or change to Double
+            System.out.print("Seconds: ");
+            Integer timeSeconds = Integer.parseInt(in.nextLine()); //TODO: enforce a limit or change to Double
 
-            timers.addTimer(new Drill(title, timeMilis));
+            drillQueue.enqueue(new Drill(title, timeSeconds));
         }
 
-        timers.runDrills();
+        drillQueue.runDrills();
     }
 }
