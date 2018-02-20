@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Driver {
     public static void main(String[] args) {
-        DrillInstructor drillQueue = new DrillInstructor();
+        DrillInstructor drillInstructor = new DrillInstructor();
 
         Scanner in = new Scanner(System.in);
 
@@ -29,9 +29,7 @@ public class Driver {
             System.out.print("Seconds: ");
             Integer timeSeconds = Integer.parseInt(in.nextLine()); //TODO: enforce a limit or change to Double
 
-            drillQueue.enqueue(new Drill(title, timeSeconds));
+            drillInstructor.enqueue(new Drill(title, timeSeconds));
         }
-
-        drillQueue.runDrills();
     }
 }
