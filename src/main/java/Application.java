@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 
 /**
  * filename:
@@ -9,7 +10,8 @@ import java.awt.event.ActionEvent;
  * date: 3/6/18
  */
 public class Application extends JFrame {
-    public static final String fWINDOW_TITLE = "SHFFL->Shine->Repeat";
+    private static final String fWINDOW_TITLE = "SHFFL->Shine->Repeat";
+    private static final String fSTART_BUTTON_TOOLTIP = "start the timers";
 
     public Application() {
         initUI(); // bad form writing UI init code in the constructor
@@ -37,6 +39,11 @@ public class Application extends JFrame {
     private void initStartButton() {
         JButton startButton = new JButton("Start");
         startButton.addActionListener((ActionEvent event) -> System.out.println("start!"));
+
+        startButton.setToolTipText(fSTART_BUTTON_TOOLTIP);
+
+        startButton.setMnemonic(KeyEvent.VK_ENTER);
+
         createLayout(startButton);
     }
 
@@ -61,5 +68,6 @@ public class Application extends JFrame {
         g1.setVerticalGroup(g1.createParallelGroup()
                 .addComponent(arg[0])
         );
+
     }
 }
