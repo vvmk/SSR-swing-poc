@@ -1,7 +1,6 @@
 import comm.IOHandler;
 import drills.DrillInstructor;
 import org.junit.Test;
-import shfflshinerepeat.Application;
 
 /**
  * filename:

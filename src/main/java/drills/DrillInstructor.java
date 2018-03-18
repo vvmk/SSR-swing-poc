@@ -32,5 +32,10 @@ public class DrillInstructor {
     public void runDrills() {
         Thread t = new Thread(drillSuite);
         t.start();
+        try {
+            Thread.sleep(30000);
+        } catch (InterruptedException ie) {
+            ie.printStackTrace();
+        }
     }
 }
