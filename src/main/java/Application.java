@@ -1,5 +1,3 @@
-import org.jcsp.lang.One2OneChannel;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

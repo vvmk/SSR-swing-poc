@@ -1,5 +1,3 @@
-import javax.swing.*;
-
 /**
  * filename:
  * project: shfflshinerepeat
@@ -27,7 +25,7 @@ public class Drill implements Runnable {
     @Override
     public void run() {
         //TODO: set title label to this drill's title
-        while(time >= 0 && !Thread.currentThread().isInterrupted()) {
+        while (time >= 0 && !Thread.currentThread().isInterrupted()) {
             //TODO: update timer tick label == time
             try {
                 Thread.sleep(1000);

@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.util.Scanner;
 
 /**
  * filename:
@@ -22,7 +21,7 @@ public class Driver {
 
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(() -> {
-                createAndShowGUI();
+            createAndShowGUI();
         });
 //       /* *//*DrillInstructor drillInstructor = new DrillInstructor();
 //
