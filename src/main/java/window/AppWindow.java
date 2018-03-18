@@ -1,3 +1,5 @@
+package window;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -5,23 +7,16 @@ import java.awt.event.KeyEvent;
 
 /**
  * filename:
- * project: shfflshinerepeat
+ * project: ShfflShineRepeat
  * author: https://github.com/vvmk
- * date: 3/6/18
+ * date: 3/18/18
  */
-public class Application extends JFrame {
+public class AppWindow extends JFrame {
     private static final String fWINDOW_TITLE = "SHFFL->Shine->Repeat";
     private static final String fSTART_BUTTON_TOOLTIP = "start the timers";
 
-    public Application() {
+    public AppWindow() {
         initUI();
-    }
-
-    public static void main(String[] args) {
-        EventQueue.invokeLater(() -> {
-            Application app = new Application();
-            app.setVisible(true);
-        });
     }
 
     private void initUI() {
@@ -30,9 +25,6 @@ public class Application extends JFrame {
         initIcon();
     }
 
-    /**
-     * In OSX, sets the minimized window icon. sweet!
-     */
     private void initIcon() {
         ImageIcon icon = new ImageIcon("/Users/V/code/ShfflShineRepeat/src/main/resources/shine-stock-java-ico.png");
         setIconImage(icon.getImage());
