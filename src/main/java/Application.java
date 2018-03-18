@@ -1,3 +1,5 @@
+import org.jcsp.lang.One2OneChannel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,13 +16,13 @@ public class Application extends JFrame {
     private static final String fSTART_BUTTON_TOOLTIP = "start the timers";
 
     public Application() {
-        initUI(); // bad form writing UI init code in the constructor
+        initUI();
     }
 
     public static void main(String[] args) {
         EventQueue.invokeLater(() -> {
-            Application app = new Application(); // instantiate a new app
-            app.setVisible(true); // set this jframe to visible
+            Application app = new Application();
+            app.setVisible(true);
         });
     }
 
@@ -30,7 +32,9 @@ public class Application extends JFrame {
         initIcon();
     }
 
-    /** In OSX, sets the minimized window icon. sweet! */
+    /**
+     * In OSX, sets the minimized window icon. sweet!
+     */
     private void initIcon() {
         ImageIcon icon = new ImageIcon("/Users/V/code/ShfflShineRepeat/src/main/resources/shine-stock-java-ico.png");
         setIconImage(icon.getImage());
@@ -41,17 +45,16 @@ public class Application extends JFrame {
         startButton.addActionListener((ActionEvent event) -> System.out.println("start!"));
 
         startButton.setToolTipText(fSTART_BUTTON_TOOLTIP);
-
         startButton.setMnemonic(KeyEvent.VK_ENTER);
 
         createLayout(startButton);
     }
 
     private void initMainWindow() {
-        setTitle(fWINDOW_TITLE); // set the title
-        setSize(300, 200); // set the size
-        setLocationRelativeTo(null); // open relative to another component, in this case nothing. its the top level container
-        setDefaultCloseOperation(EXIT_ON_CLOSE); // close button does nothing by default
+        setTitle(fWINDOW_TITLE);
+        setSize(300, 200);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
     private void createLayout(JComponent... arg) {

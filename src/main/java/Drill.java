@@ -7,7 +7,7 @@ import javax.swing.*;
  * date: 2/12/18
  */
 
-public class Drill {
+public class Drill implements Runnable {
     private int time;
     private String title;
 
@@ -22,5 +22,20 @@ public class Drill {
 
     public String getTitle() {
         return title;
+    }
+
+    @Override
+    public void run() {
+        //TODO: set title label to this drill's title
+        while(time >= 0 && !Thread.currentThread().isInterrupted()) {
+            //TODO: update timer tick label == time
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ie) {
+                time = 0;
+            }
+            time--;
+        }
+        //TODO: clean up UI
     }
 }
